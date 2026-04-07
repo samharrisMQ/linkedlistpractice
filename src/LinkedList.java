@@ -49,6 +49,20 @@ public class LinkedList {
         }
     }
 
+    Node findMid() {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        //fast traverses list 2x faster, so when it's done, slow will be at length/2
+        Node mid = slow;
+
+        return mid;
+    }
+
     void show() {
         Node n = head;
 
